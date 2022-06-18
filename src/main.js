@@ -11,6 +11,8 @@ import "@/scss/all.min.css";
 import "normalize.css";
 import "./scss/main.scss";
 
+import "./filter";
+
 new Vue({
   router,
   store,

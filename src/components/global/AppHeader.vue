@@ -81,9 +81,9 @@ export default {
   min-height: 56px;
   .my-logo {
     height: 100%;
-    color: #42b983;
+    color: #0dcaf0;
     i {
-      color: #42b983;
+      color: #0dcaf0;
     }
     h1 {
       display: inline;
@@ -98,7 +98,7 @@ export default {
   }
   a:hover,
   li.router-link-active a {
-    color: #42b983;
+    color: #0dcaf0;
   }
   button {
     all: unset;
@@ -125,7 +125,7 @@ export default {
       position: absolute;
       width: inherit;
       height: 2px;
-      background-color: #42b983;
+      background-color: #0dcaf0;
       transition: transform 0.5s;
     }
     .line-main::before {

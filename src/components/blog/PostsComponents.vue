@@ -1,20 +1,15 @@
 <template>
-  <div class="post-box">
-    <span class="post-views">12</span>
-    <h3 class="post-title">Post Title</h3>
-    <span class="post-date">25-10-2022</span>
-    <p class="post-content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum provident
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum provident
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum provident
-      explicabo a nemo veniam
-    </p>
+  <div class="post-box mb-5">
+    <span class="post-views">{{ views }}</span>
+    <h3 class="post-title">{{ title }}</h3>
+    <span class="post-date">{{ date }}</span>
+    <p class="post-content">{{ content }}</p>
     <div class="row">
       <div class="col-sm-6 d-flex justify-content-start align-items-center">
-        <span class="auther-name">Mohamed Rawash</span>
+        <span class="auther-name">{{ autherName }}</span>
       </div>
       <div class="col-sm-6 d-flex justify-content-end align-items-center">
-        <span class="post-category">Categories</span>
+        <span class="post-category">{{ category | uppercase }}</span>
       </div>
     </div>
   </div>
@@ -23,6 +18,7 @@
 <script>
 export default {
   name: "PostCompon",
+  props: ["views", "title", "date", "content", "autherName", "category"],
 };
 </script>
 
@@ -30,22 +26,24 @@ export default {
 .post-box {
   position: relative;
   padding: 20px;
-  background-color: #fff;
+  background-color: #9e1eee10;
+  backdrop-filter: blur(3px);
+  border-radius: 16px;
   text-align: left;
   box-shadow: 0 0 10px #ddd;
+  overflow: hidden;
   .post-views {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: #42b983;
-    border-radius: 4px;
-    padding: 1px 5px;
+    top: 0;
+    right: 0;
+    background-color: #0dcaf0;
+    padding: 2px 8px;
     color: #fff;
     text-align: center;
     font-weight: bold;
   }
   .post-title {
-    color: #777;
+    color: #fff;
   }
   .post-date {
     display: block;
@@ -55,14 +53,14 @@ export default {
     font-size: 14px;
   }
   .post-content {
-    color: #555;
+    color: #fff;
     line-height: 1.5;
   }
   .auther-name,
   .post-category {
     padding: 6px 10px;
-    background-color: #607d88;
-    color: #42b983;
+    background-color: #0dcaf0;
+    color: #fff;
     border-radius: 4px;
   }
 }

@@ -245,6 +245,12 @@ export default {
       &:hover span {
         animation: flashing 0.7s;
       }
+      &::before {
+        animation: moving-top 2s ease-in-out;
+      }
+      &::after {
+        animation: moving-bottom 2s ease-in-out;
+      }
     }
   }
 }
@@ -268,6 +274,26 @@ span {
     opacity: 0;
     width: 100%;
     height: 100%;
+  }
+}
+@keyframes moving-top {
+  from {
+    top: 50%;
+    left: 50%;
+  }
+  to {
+    top: -10px;
+    left: -10px;
+  }
+}
+@keyframes moving-bottom {
+  from {
+    bottom: 50%;
+    right: 50%;
+  }
+  to {
+    bottom: -10px;
+    right: -10px;
   }
 }
 </style>
