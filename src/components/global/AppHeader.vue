@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg sticky-sm-top">
     <div class="container">
       <div class="my-logo">
         <i class="fa-solid fa-meteor fa-2x"></i>
@@ -20,9 +20,9 @@
         </label>
       </button>
       <div class="collapse navbar-collapse" id="main">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ms-auto">
           <router-link to="/" tag="li" class="nav-item" exact>
-            <a href="" class="nav-link p-2 p-lg-3">
+            <a href="" class="nav-link">
               <div>
                 <i class="fa-solid fa-house-crack"></i>
                 <span class="d-sm-inline-block ms-1">Home</span>
@@ -30,7 +30,7 @@
             </a>
           </router-link>
           <router-link to="/portfolio" class="nav-item" tag="li">
-            <a href="" class="nav-link p-2 p-lg-3">
+            <a href="" class="nav-link">
               <div>
                 <i class="fa-solid fa-briefcase"></i>
                 <span class="d-sm-inline-block ms-1">Portfolio</span>
@@ -38,7 +38,7 @@
             </a>
           </router-link>
           <router-link to="/blog" class="nav-item" tag="li">
-            <a href="" class="nav-link p-2 p-lg-3">
+            <a href="" class="nav-link">
               <div>
                 <i class="fa-solid fa-blog"></i>
                 <span class="d-sm-inline-block ms-1">Blogs</span>
@@ -46,7 +46,7 @@
             </a>
           </router-link>
           <router-link to="/about" class="nav-item" tag="li">
-            <a href="" class="nav-link p-2 p-lg-3">
+            <a href="" class="nav-link">
               <div>
                 <i class="fa-solid fa-address-card"></i>
                 <span class="d-sm-inline-block ms-1">About</span>
@@ -54,7 +54,7 @@
             </a>
           </router-link>
           <router-link to="/help" class="nav-item" tag="li" replace>
-            <a href="" class="nav-link p-2 p-lg-3">
+            <a href="" class="nav-link">
               <div>
                 <i class="fa-solid fa-hands-holding-child"></i>
                 <span class="d-sm-inline-block ms-1">Help</span>
@@ -76,8 +76,6 @@ export default {
 .navbar {
   background-color: #1a1a1a;
   border-bottom: 1px solid #0dcaf0;
-  padding-top: 0;
-  padding-bottom: 0;
   min-height: 56px;
   .my-logo {
     height: 100%;
@@ -88,17 +86,17 @@ export default {
     h1 {
       display: inline;
       font-size: 2rem;
+      font-weight: bold;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
   }
   a {
-    color: white;
+    margin-right: 6px;
+    border-radius: 8px;
+    color: #fff;
     cursor: pointer;
-  }
-  a:hover,
-  li.router-link-active a {
-    color: #0dcaf0;
+    transition: 0.3s;
   }
   button {
     all: unset;
@@ -161,6 +159,24 @@ export default {
     .burger {
       display: none;
     }
+  }
+}
+@media (max-width: 991px) {
+  //.navbar-expand-lg {
+  //  background-image: url("../../assets/nav-bg.jpg");
+  //}
+  a:hover,
+  li.router-link-active a {
+    color: #0dcaf0;
+  }
+}
+@media (min-width: 991px) {
+  a:hover,
+  li.router-link-active a {
+    color: #fff;
+    background-color: #0dcaf0;
+    box-shadow: 0 0 5px #0dcaf0, 0 0 25px #0dcaf0, 0 0 50px #0dcaf0,
+      0 0 200px #0dcaf0;
   }
 }
 </style>

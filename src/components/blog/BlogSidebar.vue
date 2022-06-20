@@ -12,11 +12,17 @@ export default {
 
 <style lang="scss" scoped>
 .aside {
+  display: block;
   position: fixed;
   min-height: 80%;
-  width: 200px;
+  width: 350px;
   right: 80px;
   top: 126px;
   background-color: aquamarine;
+}
+@media (max-width: 1200px) {
+  .aside {
+    display: none;
+  }
 }
 </style>

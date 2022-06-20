@@ -1,4 +1,4 @@
-<template>
+<template lang="html5">
   <div class="about">
     <h1>{{ pageName }}</h1>
     <p>{{ pageDesc }}</p>

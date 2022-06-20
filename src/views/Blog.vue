@@ -1,10 +1,9 @@
-<template>
+<template lang="html">
   <div class="blog">
-    <h1 class="text-primary">{{ pageName }}</h1>
-    <p class="text-primary">{{ pageDesc }}</p>
-    <div class="container">
+    <div class="container text-center">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12 col-lg-12 col-xl-8 col-xxl-8">
+          <main-title :title="mainTitle" />
           <div class="posts-area">
             <blog-posts
               v-for="post in posts"
@@ -18,7 +17,7 @@
             />
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-0 col-lg-0 col-xl-4">
           <div class="sidebar">
             <blog-sidebar />
           </div>
@@ -29,6 +28,7 @@
 </template>
 
 <script>
+import MainTitle from "@/components/global/MainTitle";
 import BlogPosts from "@/components/blog/PostsComponents.vue";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import Posts from "../json/Blogs.json";
@@ -40,11 +40,13 @@ export default {
       pageName: "Blog",
       pageDesc: "This is blog page",
       posts: Posts,
+      mainTitle: "Blogs",
     };
   },
   components: {
     BlogPosts,
     BlogSidebar,
+    MainTitle,
   },
 };
 </script>

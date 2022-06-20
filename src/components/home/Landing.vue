@@ -73,7 +73,7 @@ export default {
   background-size: cover;
   .container {
     padding: 60px 20px;
-    background-color: #ffffff10;
+    background-color: #0dcaf033;
     backdrop-filter: blur(3px);
     border-radius: 16px;
     .info {
@@ -90,19 +90,27 @@ export default {
         }
       }
       h2 {
+        width: fit-content;
+        padding: 4px 8px;
+        border-radius: 4px;
         font-size: 1rem;
-        color: #0dcaf0;
+        color: #fff;
         letter-spacing: 2px;
         text-align: start;
+        background-color: #0dcaf033;
+        text-shadow: 0 0 5px #0dcaf0, 0 0 25px #0dcaf0, 0 0 50px #0dcaf0,
+          0 0 200px #0dcaf0;
       }
       p:last-of-type {
+        color: #212529;
         text-align: start;
         font-size: 12px;
+        margin-left: 8px;
       }
       .social {
         position: relative;
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -202,14 +210,14 @@ export default {
             45deg,
             #f09433 0%,
             #e6683c 25%,
-            #dc2743 50%,
+            rgba(220, 39, 67, 0.97) 50%,
             #cc2366 75%,
             #bc1888 100%
           );
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
         }
         &::after {
-          border-bottom-color: #dc2743;
+          border-bottom-color: #dc2743c0;
         }
       }
     }

@@ -26,11 +26,12 @@ export default {
 .post-box {
   position: relative;
   padding: 20px;
-  background-color: #9e1eee10;
-  backdrop-filter: blur(3px);
+  background-color: #0dcaf021;
+  backdrop-filter: blur(30px);
   border-radius: 16px;
   text-align: left;
-  box-shadow: 0 0 10px #ddd;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   overflow: hidden;
   .post-views {
     position: absolute;
