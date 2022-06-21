@@ -3,7 +3,7 @@
     <span class="post-views">{{ views }}</span>
     <h3 class="post-title">{{ title }}</h3>
     <span class="post-date">{{ date }}</span>
-    <p class="post-content">{{ content }}</p>
+    <p class="post-content">{{ content | shorten(" ....") }}</p>
     <div class="row">
       <div class="col-sm-6 d-flex justify-content-start align-items-center">
         <span class="auther-name">{{ autherName }}</span>

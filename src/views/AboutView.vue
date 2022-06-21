@@ -1,23 +1,20 @@
-<template lang="html5">
+<template>
   <div class="about">
-    <h1>{{ pageName }}</h1>
-    <p>{{ pageDesc }}</p>
+    <coming-soon />
   </div>
 </template>
 
 <script>
+import ComingSoon from "@/components/global/ComingSoon";
 export default {
   name: "AboutPage",
-  data: function () {
-    return {
-      pageName: "About",
-      pageDesc: "This is about page",
-    };
+  components: {
+    ComingSoon,
   },
 };
 </script>
 <style lang="scss" scoped>
 .about {
-  min-height: calc(100vh - 82px);
+  min-height: calc(100vh - 60px);
 }
 </style>

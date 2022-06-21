@@ -7,7 +7,9 @@
         <a download :href="repo" target="_blank" class="visit-repo"
           >Check Github</a
         >
-        <a :href="preview" class="preview" v-if="preview">Preview</a>
+        <a :href="preview" target="_blank" class="preview" v-if="preview"
+          >Preview</a
+        >
       </div>
       <span class="project-name">{{ name }}</span>
     </div>
@@ -28,35 +30,12 @@ export default {
   margin-bottom: 20px;
   cursor: pointer;
   perspective: 10px;
-  background: #0dcaf0;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   img {
     width: 100%;
     height: 400px;
-    border: 4px solid #fff;
     z-index: -1;
-  }
-  &::before,
-  &::after {
-    position: absolute;
-    content: "";
-    background-color: #fff;
-    z-index: 2;
-  }
-  &::before {
-    width: 4px;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    margin-left: -2px;
-  }
-  &::after {
-    width: 100%;
-    height: 4px;
-    left: 0;
-    top: 50%;
-    margin-top: -2px;
   }
   .overlay {
     position: absolute;
