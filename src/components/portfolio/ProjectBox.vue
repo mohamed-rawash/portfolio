@@ -1,14 +1,15 @@
 <template>
-  <div class="project-box mb-4">
-    <img
-      src="../../assets/ml-photo.png"
-      alt="This Is Project photo for preview"
-      class="col-sm-4"
-    />
-    <span class="overlay"></span>
-    <div class="links text-center">
-      <a href="#" class="visit-repo">Check Github</a>
-      <a href="#" class="preview">Preview</a>
+  <div class="col-md-4">
+    <div class="project-box">
+      <img :src="image" alt="This Is Project photo for preview" />
+      <span class="overlay"></span>
+      <div class="links text-center">
+        <a download :href="repo" target="_blank" class="visit-repo"
+          >Check Github</a
+        >
+        <a :href="preview" class="preview" v-if="preview">Preview</a>
+      </div>
+      <span class="project-name">{{ name }}</span>
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@
 <script>
 export default {
   name: "ProjectBox",
+  props: ["image", "name", "repo", "preview"],
 };
 </script>
 
@@ -23,12 +25,17 @@ export default {
 .project-box {
   position: relative;
   width: 100%;
+  margin-bottom: 20px;
   cursor: pointer;
   perspective: 10px;
+  background: #0dcaf0;
+  overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   img {
     width: 100%;
+    height: 400px;
     border: 4px solid #fff;
+    z-index: -1;
   }
   &::before,
   &::after {
@@ -96,6 +103,26 @@ export default {
   &:hover .preview {
     transform: scale(1);
     transform-origin: center;
+  }
+  .project-name {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: fit-content;
+    width: 0;
+    padding: 8px 0;
+    background: #0dcaf0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 10;
+    transition: 0.4s;
+  }
+  &:hover .project-name {
+    left: 0;
+    width: 100%;
   }
 }
 </style>

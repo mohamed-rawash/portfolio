@@ -1,11 +1,8 @@
 <template>
   <div class="col-sm-4">
-    <div
-      class="resume"
-      data-info="tap to download resume"
-      data-resumeName="Flutter Resume"
-    >
-      <img src="../../assets/front-end.png" alt="Flutter Resume" />
+    <div class="resume" :data-resumeName="desc">
+      <img :src="image" alt="Flutter Resume" />
+      <a download :href="link" target="_blank">tap to download</a>
     </div>
   </div>
 </template>
@@ -13,6 +10,7 @@
 <script>
 export default {
   name: "ResumeComponent",
+  props: ["image", "desc", "link"],
 };
 </script>
 
@@ -22,12 +20,14 @@ export default {
   margin: 0 auto 20px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  cursor: pointer;
   overflow: hidden;
   img {
     width: 100%;
+    height: 300px;
     padding: 5px;
   }
-  &::before,
+  a,
   &::after {
     position: absolute;
     left: 5px;
@@ -38,12 +38,12 @@ export default {
     text-transform: uppercase;
     font-size: 1.5rem;
   }
-  &::before {
-    content: attr(data-info);
+  a {
     top: -50px;
     width: calc(100% - 10px);
     background-color: #1da1f255;
     color: #fff;
+    text-decoration: none;
     z-index: 6;
     transition: 0.3s ease-in;
   }
@@ -54,12 +54,10 @@ export default {
     height: 0;
     background-color: #fff;
     color: #0dcaf0;
-    border-radius-topleft: 4px;
-    border-radius-topright: 4px;
     z-index: 8;
     transition: 0.3s ease-in 0.3s;
   }
-  &:hover::before {
+  &:hover a {
     top: 5px;
     height: calc(100% - 10px);
   }

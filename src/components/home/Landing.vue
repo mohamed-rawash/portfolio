@@ -9,7 +9,7 @@
             development, machine learning and web design.
           </p>
           <h2 class="text-uppercase mb-0 fw-light">Mohamed Rawash</h2>
-          <p class="text-white-50">I'm developer, i grow to learn</p>
+          <p>I'm developer, i grow to learn</p>
           <div class="d-flex justify-content-center align-items-center mt-5">
             <div class="social linked-in me-3 p-2" data-tooltip="Linkedin">
               <a
@@ -94,18 +94,27 @@ export default {
         padding: 4px 8px;
         border-radius: 4px;
         font-size: 1rem;
-        color: #fff;
-        letter-spacing: 2px;
+        color: #0dcaf0;
+        letter-spacing: 3px;
         text-align: start;
-        background-color: #0dcaf033;
+        background: linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
         text-shadow: 0 0 5px #0dcaf0, 0 0 25px #0dcaf0, 0 0 50px #0dcaf0,
           0 0 200px #0dcaf0;
       }
       p:last-of-type {
-        color: #212529;
+        color: #fff;
         text-align: start;
         font-size: 12px;
         margin-left: 8px;
+        letter-spacing: 1px;
       }
       .social {
         position: relative;
@@ -234,8 +243,15 @@ export default {
         position: absolute;
         width: 50%;
         height: 50%;
-        background-color: #0dcaf0;
-        backdrop-filter: blur(30px);
+        background: linear-gradient(
+          45deg,
+          #f09433 0%,
+          #e6683c 25%,
+          #dc2743 50%,
+          #cc2366 75%,
+          #bc1888 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
         z-index: -1;
       }
       &::before {
